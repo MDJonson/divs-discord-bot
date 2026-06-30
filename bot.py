@@ -34,14 +34,14 @@ class GateView(discord.ui.View):
         self.kick_button.custom_id  = f"gate_kick_{target_user_id}"
 
     # ── Allow ─────────────────────────────────────────────────────────────────
-    @discord.ui.button(label="✅  Allow", style=discord.ButtonStyle.success)
+    @discord.ui.button(label="✅ Let em in", style=discord.ButtonStyle.success)
     async def allow_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         guild  = interaction.guild
         member = guild.get_member(self.target_user_id)
 
         if member is None:
             await interaction.response.send_message(
-                "⚠️ Member not found – they may have already left.", ephemeral=True
+                "⚠️ Our little sheep left before they were even allowed in~", ephemeral=True
             )
             return
 
@@ -71,7 +71,7 @@ class GateView(discord.ui.View):
 
         if member is None:
             await interaction.response.send_message(
-                "⚠️ Member not found – they may have already left.", ephemeral=True
+                "⚠️ Oh~ They're not allowed here either way~", ephemeral=True
             )
             return
 
