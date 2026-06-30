@@ -117,11 +117,11 @@ async def _mark_resolved(
 
 def build_join_embed(member: discord.Member) -> discord.Embed:
     embed = discord.Embed(
-        title="🔔 New Member Joined",
+        title="🔔 A new sheep arrived~",
         description=(
             f"**{member.mention}** (`{member.name}#{member.discriminator}`) "
-            "just joined the server.\n\n"
-            "Review their profile and decide whether to allow or kick them."
+            "appeared out of no where.\n\n"
+            "Let's decide on their fate~."
         ),
         color=discord.Color.blurple(),
         timestamp=member.joined_at,
